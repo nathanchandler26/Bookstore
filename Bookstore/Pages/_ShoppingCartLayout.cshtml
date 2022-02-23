@@ -1,11 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bookstore</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -26,25 +25,8 @@
             </div>
         </nav>
     </header>
-    @*BOOTSTRAP CODE NAVBAR*@
-    @*Keep this navbar in the header because I really like it*@
-
-    <div class="row m-1 p-1">
-        <div id="types" class="col-2">
-            <vc:types></vc:types>
-        </div>
-        @*Create a column on the left side of the screen*@
-
-        <div class="col-10">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-        @RenderSection("Scripts", required: false)
+    <div class="m-1 p-1">
+        @RenderBody()
     </div>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>

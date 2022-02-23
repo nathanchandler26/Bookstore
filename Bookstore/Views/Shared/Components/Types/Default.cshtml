@@ -1,0 +1,15 @@
+﻿@{
+}
+
+@model IEnumerable<string>
+
+<div>
+    <a asp-controller="Home" asp-action="Index" asp-route-Category="" asp-route-pageNum="1" class="btn btn-block btn-outline-dark">Home</a>
+
+    @foreach (string t in Model)
+    {
+        <a asp-controller="Home" asp-action="Index" asp-route-Category="@t" asp-route-pageNum="1"
+           class="btn btn-block @(ViewBag.SelectedType == t ? "btn-info" : "btn-outline-dark")">@t</a>
+        //The first color is what it looks like when clicked on, the second when highlighted
+    }
+</div>

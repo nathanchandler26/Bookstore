@@ -5,8 +5,18 @@
 
     <div class="card card-outline-primary m-1 p-1">
 
-        <h3 class="bg-light p-1">@Model.Title</h3>
-        @*//Bootstrap styling!*@
+        <div class="bg-light p-1">
+            <h3>@Model.Title</h3>
+            @*//Bootstrap styling!*@
+
+            <h5>
+                <span class="badge bg-success text-white">
+                    Price: $@Model.Price
+                </span>
+                @*This will create a badge that shows the price of the book. This isn't required but I wanted to show it.*@
+            </h5>
+
+        </div>
         <ul>
             <li>Author: @Model.Author</li>
             <li>Publisher: @Model.Publisher</li>
@@ -14,7 +24,17 @@
             <li>Classification: @Model.Classification</li>
             <li>Category: @Model.Category</li>
             <li>Page Count: @Model.PageCount</li>
-            <li>Price: $@Model.Price</li>
         </ul>
-        <br />
+        
+        <form method="post" asp-page="/ShoppingCart">
+
+            <input type="hidden" asp-for="@Model.BookId"/>
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
+
+            <span class="card-text">
+                <button type="submit" class="btn btn-secondary text-white btn-sm float-left">Add to Cart</button>
+            </span>
+            @*Add to cart button adds to the list of items that have been added*@
+
+        </form>
     </div>
