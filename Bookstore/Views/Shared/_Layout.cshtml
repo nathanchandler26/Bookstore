@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Bookstore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -21,6 +22,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        <li class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 text-right">
+                                    <vc:cart-summary />
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -28,6 +36,7 @@
     </header>
     @*BOOTSTRAP CODE NAVBAR*@
     @*Keep this navbar in the header because I really like it*@
+
 
     <div class="row m-1 p-1">
         <div id="types" class="col-2">
