@@ -17,13 +17,13 @@
             </h5>
 
         </div>
-        <ul>
-            <li>Author: @Model.Author</li>
-            <li>Publisher: @Model.Publisher</li>
-            <li>ISBN: @Model.Isbn</li>
-            <li>Classification: @Model.Classification</li>
-            <li>Category: @Model.Category</li>
-            <li>Page Count: @Model.PageCount</li>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Author: @Model.Author</li>
+            <li class="list-group-item">Publisher: @Model.Publisher</li>
+            <li class="list-group-item">ISBN: @Model.Isbn</li>
+            <li class="list-group-item">Classification: @Model.Classification</li>
+            <li class="list-group-item">Category: @Model.Category</li>
+            <li class="list-group-item">Page Count: @Model.PageCount</li>
         </ul>
         
         <form method="post" asp-page="/ShoppingCart">
@@ -32,7 +32,8 @@
             <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
 
             <span class="card-text">
-                <button type="submit" class="btn btn-secondary text-white btn-sm float-left">Add to Cart</button>
+                <button type="submit" class="btn btn-secondary text-white btn-md float-left p-2 m-2">Add to Cart</button>
+                @*Margin creates space outside, padding creates space within*@
             </span>
             @*Add to cart button adds to the list of items that have been added*@
 

@@ -1,0 +1,25 @@
+﻿@inherits LayoutComponentBase
+
+<div class="bg-secondary text-white p-2">
+    <span class="navbar-brand m-lg-2">Bookstore Administration</span>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row p-2">
+
+        <div class="col-3">
+            <NavLink class="btn btn-block btn-outline-dark" href="/admin/books"
+                     ActiveClass="btn-info text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
+            <NavLink class="btn btn-block btn-outline-dark" href="/admin/purchases"
+                     ActiveClass="btn-info text-white" Match="NavLinkMatch.Prefix">Purchases</NavLink>
+        </div>
+        @*Functionality to flip back between Books and Purchases*@
+
+        <div class="col">
+            @Body
+        </div>
+
+    </div>
+
+</div>
