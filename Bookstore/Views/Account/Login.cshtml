@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+@*This makes it so the layout is different from the other pages*@
+
+@model LoginModel
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bookstore Login</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand m-1-2">BOOKSTORE</span>
+    </div>
+
+    <div class="m-1 p-1">
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+        @*Add an error message for all fields if necessary*@
+
+        <form method="post" asp-controller="Account" asp-action="Login">
+
+            <div class="form-group col-3"> @*Shrink the input field a little bit*@
+                <label asp-for="Username">Username:</label>
+                <input asp-for="Username" class="form-control" placeholder="Username"/>
+            </div>
+            @*Input field to put in the username*@
+
+            <div class="form-group col-3"> @*Shrink the input field a little bit*@
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" class="form-control" type="password" placeholder="Password"/>
+            </div>
+            @*Input field to put in the password*@
+
+            <button class="btn btn-info btn-md m-3 text-center" type="submit">Login</button>
+
+            <input type="hidden" asp-for="ReturnUrl"/>
+
+            <div class="text-left" style="padding-left: 20px;">
+                <!-- Checkbox -->
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="formCheck"
+                        checked
+                    />
+                    <label class="form-check-label" for="formCheck">Remember me</label>
+                </div>
+            </div>
+            @*NEW BOOTSTRAP -- Add a checkbox for remembering the user*@
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
